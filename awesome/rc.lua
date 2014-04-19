@@ -249,6 +249,9 @@ globalkeys = awful.util.table.join(
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end),
+
+    awful.key({ }       , "XF86LaunchA", function () awful.util.spawn("xrandr --output DP1 --mode 1920x1080 --above eDP1") end),
+    awful.key({ modkey }, "XF86LaunchA", function () awful.util.spawn("xrandr --output DP1 --off") end),
     awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 2dB-") end),
     awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 2dB+") end),
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -20") end),
